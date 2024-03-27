@@ -12,7 +12,7 @@
 #include <unistd.h>         // for the microsecond sleep function
 using namespace std;
 #define GPIO         "/sys/class/gpio/"
-#define FLASH_DELAY  100000 // 50 milliseconds
+#define FLASH_DELAY  1000000 // 50 milliseconds
 
 class LED{
    private:                // the following is part of the implementation
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]){  // the main function start point
    LED led1(4), led2(17), led3(27);          // create two LED objects
    cout << "Flashing the LEDs for 5 seconds" << endl;
 
-   for (int i = 0; i < 50; i++) {
+   for (int i = 0; i < 20; i++) {
     led1.turnOn();
     usleep(FLASH_DELAY);
     led1.turnOff();
